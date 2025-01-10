@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио моих игр</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .game-card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .game-card img {
+                width: 80%; /* Устанавливаем ширину изображения в 80% от ширины контейнера */
+                max-width: 600px; /* Максимальная ширина для изображения */
+                height: auto; /* Автоматическая высота для сохранения пропорций */
+                border-radius: 8px;
+                display: block; /* Для устранения пустого пространства под изображением */
+                margin: 0 auto; /* Центрируем изображение по горизонтали */
+            }
+
+            .game-card a {
+                display: inline-block;
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+            }
+
+                .game-card a:hover {
+                    background-color: #45a049;
+                }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .game-card {
+                padding: 15px;
+            }
+
+                .game-card a {
+                    padding: 8px 16px;
+                }
+
+                .game-card img {
+                    width: 100%; /* На мобильных устройствах изображение будет занимать 100% */
+                    max-width: none; /* Убираем максимальную ширину */
+                }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Портфолио моих игр в Roblox</h1>
+    </header>
+    <div class="container">
+        <section class="game-card">
+            <h2>Africa - Игра в Roblox</h2>
+            <img src="africa_game_screenshot.png" alt="Africa Game Screenshot">
+            <p>Краткое описание игры: Присоединяйтесь к приключению в Африке, где вам предстоит выжить в дикой природе, исследовать мир и сражаться с врагами.</p>
+            <a href="https://www.roblox.com/games/99565340005696/AFRICA">Перейти в игру</a>
+        </section>
+
+        <section class="game-card">
+            <h2>Madness Tower Defense - Игра в Roblox</h2>
+            <img src="madness_tower_defense_screenshot.png" alt="Madness Tower Defense Game Screenshot">
+            <p>Краткое описание игры: Защищайте свою базу в этом увлекательном Tower Defense с уникальными башнями и врагами.</p>
+            <a href="https://www.roblox.com/games/77439559234898/UPDATE-Madness-Tower-Defense">Перейти в игру</a>
+        </section>
+
+        <section class="game-card">
+            <h2>Контактная информация</h2>
+            <p>Discord: noobert1670</p>
+            <p>Социальные сети: <a href="https://www.roblox.com/users/1213924428/profile">Мой профиль на Roblox</a></p>
+        </section>
+    </div>
+</body>
+</html>
