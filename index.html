@@ -4,20 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио моих игр</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Иконка сайта -->
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #121212; /* Тёмный фон */
+            color: #e0e0e0; /* Светлый текст */
         }
 
         header {
-            background-color: #333;
-            color: white; /* Белый цвет текста */
+            background-color: #1f1f1f; /* Тёмный фон для заголовка */
+            color: white; /* Белый текст */
             padding: 10px 20px;
             text-align: center;
+            position: relative;
         }
+
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .language-button {
+            width: 30px;
+            height: 20px;
+            border: none;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            border-radius: 3px;
+            outline: none;
+            transition: transform 0.2s ease;
+        }
+
+            .language-button:hover {
+                transform: scale(1.1); /* Увеличение при наведении */
+            }
+
+            .language-button.ru {
+                background-image: url('https://flagcdn.com/w40/ru.png');
+            }
+
+            .language-button.en {
+                background-image: url('https://flagcdn.com/w40/us.png');
+            }
 
         .container {
             max-width: 1200px;
@@ -26,24 +61,24 @@
         }
 
         h1, h2 {
-            color: #333;
+            color: #e0e0e0; /* Светлый цвет для заголовков */
         }
 
         .game-card {
-            background: white;
+            background: #1e1e1e; /* Тёмный фон для карточек */
             padding: 20px;
             margin: 20px 0;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Тень для карточек */
         }
 
             .game-card img {
-                width: 80%; /* Устанавливаем ширину изображения в 80% от ширины контейнера */
-                max-width: 600px; /* Максимальная ширина для изображения */
-                height: auto; /* Автоматическая высота для сохранения пропорций */
+                width: 80%;
+                max-width: 600px;
+                height: auto;
                 border-radius: 8px;
-                display: block; /* Для устранения пустого пространства под изображением */
-                margin: 0 auto; /* Центрируем изображение по горизонтали */
+                display: block;
+                margin: 0 auto;
             }
 
             .game-card a {
@@ -74,35 +109,77 @@
                 }
 
                 .game-card img {
-                    width: 100%; /* На мобильных устройствах изображение будет занимать 100% */
-                    max-width: none; /* Убираем максимальную ширину */
+                    width: 100%;
+                    max-width: none;
                 }
         }
     </style>
+    <script>
+        const translations = {
+            en: {
+                title: "Portfolio of My Roblox Games",
+                africaTitle: "Africa - Roblox Game",
+                africaDescription: "Join an adventure in Africa, where you must survive in the wild, explore the world, and fight enemies.",
+                madnessTitle: "Madness Tower Defense - Roblox Game",
+                madnessDescription: "Defend your base in this exciting Tower Defense game with unique towers and enemies.",
+                contactInfo: "Contact Information",
+                discord: "Discord: noobert1670",
+                robloxProfile: "My Roblox Profile",
+                playGame: "Play Game"
+            },
+            ru: {
+                title: "Портфолио моих игр в Roblox",
+                africaTitle: "Africa - Игра в Roblox",
+                africaDescription: "Присоединяйтесь к приключению в Африке, где вам предстоит выжить в дикой природе, исследовать мир и сражаться с врагами.",
+                madnessTitle: "Madness Tower Defense - Игра в Roblox",
+                madnessDescription: "Защищайте свою базу в этом увлекательном Tower Defense с уникальными башнями и врагами.",
+                contactInfo: "Контактная информация",
+                discord: "Discord: noobert1670",
+                robloxProfile: "Мой профиль на Roblox",
+                playGame: "Перейти в игру"
+            }
+        };
+
+        function changeLanguage(language) {
+            document.getElementById("title").innerText = translations[language].title;
+            document.getElementById("africa-title").innerText = translations[language].africaTitle;
+            document.getElementById("africa-description").innerText = translations[language].africaDescription;
+            document.getElementById("madness-title").innerText = translations[language].madnessTitle;
+            document.getElementById("madness-description").innerText = translations[language].madnessDescription;
+            document.getElementById("contact-info").innerText = translations[language].contactInfo;
+            document.getElementById("discord").innerText = translations[language].discord;
+            document.getElementById("roblox-profile").innerText = translations[language].robloxProfile;
+            document.querySelectorAll(".play-game").forEach(el => el.innerText = translations[language].playGame);
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1 style="color: white;">Портфолио моих игр в Roblox</h1>
+        <h1 id="title">Портфолио моих игр в Roblox</h1>
+        <div class="language-selector">
+            <button class="language-button ru" onclick="changeLanguage('ru')" title="Русский"></button>
+            <button class="language-button en" onclick="changeLanguage('en')" title="English"></button>
+        </div>
     </header>
     <div class="container">
         <section class="game-card">
-            <h2>Africa - Игра в Roblox</h2>
+            <h2 id="africa-title">Africa - Игра в Roblox</h2>
             <img src="africa_game_screenshot.png" alt="Africa Game Screenshot">
-            <p>Краткое описание игры: Присоединяйтесь к приключению в Африке, где вам предстоит выжить в дикой природе, исследовать мир и сражаться с врагами.</p>
-            <a href="https://www.roblox.com/games/99565340005696/AFRICA">Перейти в игру</a>
+            <p id="africa-description">Присоединяйтесь к приключению в Африке, где вам предстоит выжить в дикой природе, исследовать мир и сражаться с врагами.</p>
+            <a href="https://www.roblox.com/games/99565340005696/AFRICA" class="play-game">Перейти в игру</a>
         </section>
 
         <section class="game-card">
-            <h2>Madness Tower Defense - Игра в Roblox</h2>
+            <h2 id="madness-title">Madness Tower Defense - Игра в Roblox</h2>
             <img src="madness_tower_defense_screenshot.png" alt="Madness Tower Defense Game Screenshot">
-            <p>Краткое описание игры: Защищайте свою базу в этом увлекательном Tower Defense с уникальными башнями и врагами.</p>
-            <a href="https://www.roblox.com/games/77439559234898/UPDATE-Madness-Tower-Defense">Перейти в игру</a>
+            <p id="madness-description">Защищайте свою базу в этом увлекательном Tower Defense с уникальными башнями и врагами.</p>
+            <a href="https://www.roblox.com/games/77439559234898/UPDATE-Madness-Tower-Defense" class="play-game">Перейти в игру</a>
         </section>
 
         <section class="game-card">
-            <h2>Контактная информация</h2>
-            <p>Discord: noobert1670</p>
-            <p>Социальные сети: <a href="https://www.roblox.com/users/1213924428/profile">Мой профиль на Roblox</a></p>
+            <h2 id="contact-info">Контактная информация</h2>
+            <p id="discord">Discord: noobert1670</p>
+            <p><a href="https://www.roblox.com/users/1213924428/profile" id="roblox-profile">Мой профиль на Roblox</a></p>
         </section>
     </div>
 </body>
